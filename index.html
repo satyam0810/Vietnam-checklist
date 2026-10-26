@@ -1,0 +1,307 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Vietnam Carry Checklist</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: one column "travel wallet" — date strip on top, one day open at a time, items grouped by bag */
+:root{
+  --bg:#f3f5f2; --surface:#ffffff; --ink:#1b2622; --muted:#5d6b65; --line:#dfe5e1;
+  --jade:#0f7a5f; --jade-soft:#e2f1ec; --saffron:#b8640a; --saffron-soft:#fbf0e1; --done:#9aa8a2;
+  --chip-s:#2f5d8a; --chip-n:#a4416b; --chip-y:#8a6a10; --chip-a:#5d6b65;
+  --display:"Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+  --body:"Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#111816; --surface:#18221f; --ink:#e6ede9; --muted:#9db0a8; --line:#2a3833;
+  --jade:#3fbf98; --jade-soft:#17322a; --saffron:#f0a24a; --saffron-soft:#33261a; --done:#5f706a;
+  --chip-s:#86b4e0; --chip-n:#e891b6; --chip-y:#e0c167; --chip-a:#9db0a8; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111816; --surface:#18221f; --ink:#e6ede9; --muted:#9db0a8; --line:#2a3833;
+  --jade:#3fbf98; --jade-soft:#17322a; --saffron:#f0a24a; --saffron-soft:#33261a; --done:#5f706a;
+  --chip-s:#86b4e0; --chip-n:#e891b6; --chip-y:#e0c167; --chip-a:#9db0a8; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:760px;margin:0 auto;padding-block:20px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:18px}
+header h1{font-family:var(--display);font-weight:800;font-size:1.7rem;letter-spacing:-.02em;margin:0;text-wrap:balance}
+header p{margin:4px 0 0;color:var(--muted)}
+.who{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.tag{font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:999px;border:1px solid currentColor;white-space:nowrap}
+.t-S{color:var(--chip-s)}.t-N{color:var(--chip-n)}.t-Y{color:var(--chip-y)}.t-A{color:var(--chip-a)}
+.strip{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+.day-btn{flex:0 0 auto;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:6px 10px;min-width:58px;text-align:center;cursor:pointer;font:inherit;display:flex;flex-direction:column;gap:2px}
+.day-btn .dow{font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.day-btn .dnum{font-weight:800;font-size:1.05rem;line-height:1}
+.day-btn .bar{height:3px;border-radius:2px;background:var(--line);overflow:hidden}
+.day-btn .bar i{display:block;height:100%;background:var(--jade);width:0}
+.day-btn[aria-pressed="true"]{border-color:var(--jade);box-shadow:0 0 0 2px var(--jade-soft)}
+.day-btn:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--jade);outline-offset:2px}
+.day-btn.pre .dnum{font-size:.78rem;line-height:1.35}
+.dayhead{display:flex;flex-direction:column;gap:6px}
+.dayhead .eyebrow{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--jade);font-weight:700}
+.dayhead h2{font-family:var(--display);font-size:1.4rem;font-weight:800;margin:0;letter-spacing:-.01em;text-wrap:balance}
+.meta{display:flex;flex-wrap:wrap;gap:6px 14px;color:var(--muted);font-size:.88rem}
+.progress{display:flex;align-items:center;gap:10px;font-size:.85rem;color:var(--muted)}
+.progress .track{flex:1;height:6px;border-radius:4px;background:var(--line);overflow:hidden}
+.progress .track i{display:block;height:100%;background:var(--jade);width:0;transition:width .2s}
+.timeline{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:.92rem}
+.timeline .tm{font-family:var(--mono);font-size:.82rem;color:var(--jade);white-space:nowrap;padding-top:1px;font-variant-numeric:tabular-nums}
+.timeline div{min-width:0}
+.alert{background:var(--saffron-soft);border-radius:12px;padding:10px 14px;display:flex;flex-direction:column;gap:4px;font-size:.9rem}
+.alert strong{color:var(--saffron)}
+.alert ul{margin:0;padding-left:18px}
+.group{display:flex;flex-direction:column;gap:2px}
+.group h3{font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:6px 0 4px;font-weight:700}
+.item{display:flex;align-items:flex-start;gap:10px;padding:9px 12px;background:var(--surface);border:1px solid var(--line);border-radius:10px;cursor:pointer}
+.item+.item{margin-top:4px}
+.item input{appearance:none;flex:0 0 20px;width:20px;height:20px;border:2px solid var(--muted);border-radius:6px;margin:1px 0 0;display:grid;place-content:center;cursor:pointer;background:transparent}
+.item input:checked{background:var(--jade);border-color:var(--jade)}
+.item input:checked::after{content:"";width:10px;height:6px;border-left:2.5px solid #fff;border-bottom:2.5px solid #fff;transform:translateY(-1px) rotate(-45deg)}
+.item .txt{flex:1;min-width:0}
+.item .txt small{display:block;color:var(--muted);font-size:.8rem}
+.item .tags{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.item.checked .txt>span{color:var(--done);text-decoration:line-through}
+code{font-family:var(--mono);font-size:.85em;background:var(--jade-soft);color:var(--jade);padding:1px 5px;border-radius:4px}
+.tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.btn{font:inherit;font-size:.85rem;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 12px;cursor:pointer}
+.btn.warn{border-color:var(--saffron);color:var(--saffron)}
+.confirm{display:flex;gap:8px;align-items:center;font-size:.85rem;color:var(--muted)}
+footer{color:var(--muted);font-size:.8rem}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Vietnam Carry Checklist</h1>
+    <p>9–21 Nov 2026 · Ho Chi Minh City → Phu Quoc → Hanoi. Open the day, tick as you pack, walk out.</p>
+    <div class="who"><span class="tag t-S">Satyam</span><span class="tag t-N">Neha</span><span class="tag t-Y">Yuvaan</span><span class="tag t-A">Family</span></div>
+  </header>
+
+  <nav class="strip" id="strip" aria-label="Choose a day"></nav>
+
+  <section id="day" aria-live="polite"></section>
+
+  <footer>Ticks are saved in this browser only. Flight PNRs: Thai <code>7J3SOF</code> · Vietnam Airlines <code>D3URQ8</code>.</footer>
+</div>
+
+<script>
+const A="A",S="S",N="N",Y="Y";
+const DAYS=[
+{id:"pre",dow:"Pack",label:"Before you leave",title:"Packing list – suitcases & cabin bags",meta:["Pack by 8 Nov","South 30–33°C · North 16–25°C"],
+ timeline:[],
+ alert:["Power banks and lithium batteries go in cabin bags only.","Liquids in cabin bags: 100 ml max per bottle, all in one clear pouch.","Domestic flights allow 1 checked piece each – keep each suitcase under the limit."],
+ groups:[
+ ["Documents pouch (stays in Satyam's sling on travel days)",[
+  ["3 original passports",A,"Satyam, Neha, Yuvaan – valid 6+ months"],
+  ["3 printed e-visas",A,"Single entry, valid 31 Oct – 29 Nov"],
+  ["Thai Airways e-tickets – PNR <code>7J3SOF</code>",A,"BOM–BKK–SGN and HAN–BKK–BOM"],
+  ["Vietnam Airlines e-tickets – PNR <code>D3URQ8</code>",A,"VN6103 on 12 Nov, VN1236 on 16 Nov"],
+  ["Hotel vouchers: Otis (HCMC), Solera 2 (Phu Quoc), Dream Boutique (Hanoi)",A,"Phone copy + one printout"],
+  ["Rooty booking + 20% deposit receipt",A,"Balance ₫40M cash to guide on 13 Nov"],
+  ["Asia Tour Deals invoices – cruise & Ninh Binh",A,"ATD102637"],
+  ["VinWonders + Safari e-tickets (QR)",A],
+  ["HCMC fast-track immigration voucher",A,"10 Nov, TG550 arriving 09:15"],
+  ["Travel insurance policy",A],
+  ["Passport photocopies (2 sets) + 2 passport photos each",A,"Keep one set separate from passports"],
+ ]],
+ ["Money",[
+  ["Zero-forex card + one backup card",S],
+  ["Second card with Neha",N,"Split cards and cash between two people"],
+  ["USD cash backup ($300–500, clean new notes)",S],
+  ["INR for Pune–Mumbai and airport",S],
+  ["Small daily wallet for VND",N],
+ ]],
+ ["Phones & electronics (cabin bag)",[
+  ["2 phones + charging cables",A],
+  ["Power bank (cabin only)",S],
+  ["Plug adapter / 3-pin converter",S,"Vietnam sockets take 2-pin round plugs"],
+  ["eSIM / SIM plan activated",A],
+  ["Yuvaan's tablet + kids' headphones, charged",Y],
+  ["Apps: Grab, Google Maps (offline), Google Translate (Vietnamese offline), VinWonders, Vietnam Airlines, WhatsApp",A],
+ ]],
+ ["Medicine kit (cabin bag)",[
+  ["Personal prescription medicines",A,"In original strips"],
+  ["Paracetamol – adult tablets + kids' syrup/tablets",A],
+  ["ORS sachets, anti-diarrhoea, antacid",A],
+  ["Motion-sickness tablets (adult + child dose)",A,"Boat day 13 Nov and cruise 19 Nov"],
+  ["Antihistamine, band-aids, antiseptic cream, thermometer",A],
+  ["Mosquito repellent, sunscreen SPF 50, lip balm",A],
+  ["Hand sanitiser, wet wipes, tissues",A],
+ ]],
+ ["Clothes – Satyam",[
+  ["6 T-shirts / light shirts",S],["2 shorts + 2 trousers",S,"Trousers for temples & mausoleum"],
+  ["Light jacket or hoodie",S,"Hanoi evenings ~16°C, flights, cruise deck"],
+  ["Swimwear + quick-dry T-shirt",S],["Undergarments & socks for 7–8 days",S],
+  ["Sleepwear, cap, sunglasses",S],["Walking shoes (worn in) + floaters/sandals",S],
+ ]],
+ ["Clothes – Neha",[
+  ["Light cotton tops / dresses for the south",N],["Long skirt or trousers + stole for temples",N,"Shoulders & knees covered at Bai Dinh and the mausoleum"],
+  ["Light jacket or cardigan",N],["Swimwear + cover-up",N],["Undergarments & socks for 7–8 days",N],
+  ["Sleepwear, hat, sunglasses",N],["Walking shoes + sandals",N],
+ ]],
+ ["Clothes – Yuvaan",[
+  ["8 T-shirts (spills happen)",Y],["4 shorts + 2 long pants",Y],["Light jacket / hoodie",Y],
+  ["2 swimsuits + rash guard",Y],["Undergarments & socks for 8–9 days",Y],
+  ["Sleepwear, cap, kids' sunglasses",Y],["Sneakers + Crocs/sandals",Y],
+ ]],
+ ["Yuvaan's extras",[
+  ["Own water bottle",Y],["Familiar snacks from home (a few days' worth)",Y],
+  ["Swim goggles + arm bands",Y],["Ear plugs or kids' ear muffs",Y,"Fireworks at the Sunset Town shows are loud"],
+  ["Small toys, colouring book, comfort item",Y],["Kids' toothpaste & brush",Y],
+ ]],
+ ["Bags",[
+  ["Anti-theft crossbody sling – Satyam",S],["Crossbody sling – Neha",N],
+  ["Daypack 15–20 L",A],["Dry bag 5–10 L",A,"Boat day and cruise"],
+  ["Waterproof phone pouches without neck strap",A,"Aquatopia refuses phones on neck straps"],
+  ["Foldable duffel / tote for shopping",A],["Ziplocks, packing cubes, laundry bag",A],
+  ["Luggage tags + locks",A],["Neck pillows for the overnight flight",A],
+ ]],
+ ["Toiletries",[
+  ["Toothbrushes, toothpaste, comb, deodorant",A],["Travel-size shampoo, moisturiser, razor",A],
+  ["Quick-dry towel (1–2)",A],["Compact umbrella / rain poncho",A,"Needed in the north"],
+ ]],
+ ]},
+{id:"d09",dow:"Mon",dnum:"9",label:"Mon 9 Nov",title:"Pune → Mumbai → overnight to Bangkok",meta:["TG 318 · BOM 23:20","PNR 7J3SOF"],
+ timeline:[["Afternoon","Leave Pune for Mumbai airport (T2)"],["~20:15","Reach BOM – international check-in"],["23:20","TG 318 departs Mumbai → Bangkok (arr 05:05)"]],
+ alert:["Be at Mumbai airport 3 hours early – 18 people in one queue.","Power banks in cabin bags; liquids under 100 ml."],
+ groups:[
+ ["Satyam's sling – travel documents",[
+  ["3 passports + 3 printed e-visas",A],["Thai e-ticket PNR <code>7J3SOF</code>",A],["Fast-track voucher for SGN arrival",A],
+  ["Cards, USD cash, INR",S],["Phone + charger",S]]],
+ ["Cabin bag",[
+  ["Power bank",S],["Medicine kit + Yuvaan's fever medicine",A],["Light jackets for all 3 (planes are cold)",A],
+  ["Neck pillows",A],["Change of clothes for Yuvaan",Y],["Yuvaan's tablet + headphones",Y],
+  ["Snacks + empty water bottles (fill after security)",A],["Toothbrushes & wet wipes for the morning",A],["Pen for forms",S]]],
+ ["Before you leave home",[
+  ["Suitcases weighed and locked",A],["Phones charged, eSIM ready",A],["Lights, gas, water off at home",S]]],
+ ]},
+{id:"d10",dow:"Tue",dnum:"10",label:"Tue 10 Nov",title:"Bangkok → Ho Chi Minh City + city highlights",meta:["TG 550 · BKK 07:45 → SGN 09:15","Stay: Otis Apartment"],
+ timeline:[["05:05","Land Bangkok – transfer to TG 550 (2h 40m)"],["09:15","Land SGN T2 – fast track → immigration → bags → customs"],["Morning","Withdraw VND at airport ATM; check in at Otis"],["Afternoon","Reunification Palace, War Remnants Museum, Post Office, Notre-Dame area, Opera House"]],
+ alert:["Immigration comes first, then baggage claim.","Pay Otis Apartment (₫10.78M for the group) at check-in."],
+ groups:[
+ ["At the airport",[["Passports + printed e-visas in hand",A],["Fast-track voucher",A],["Withdraw VND at the arrivals ATM",S]]],
+ ["Sling for the city",[["Phone, small VND notes, one card",S],["Passport photocopy (originals in hotel safe)",S],["Neha's sling: phone, second card, wipes",N]]],
+ ["Daypack",[["Water bottles",A],["Sunscreen, caps, sunglasses",A],["Umbrella (sun or rain)",A],["Yuvaan's snacks",Y],["Covered clothing for the Palace",A]]],
+ ]},
+{id:"d11",dow:"Wed",dnum:"11",label:"Wed 11 Nov",title:"Local Saigon & shopping",meta:["Chinatown · Binh Tay · Ben Thanh · Saigon Square","Stay: Otis Apartment"],
+ timeline:[["Morning","Chinatown / Cholon, Binh Tay Market, Thien Hau Temple"],["Afternoon","Ben Thanh, Saigon Square shopping"],["Evening","Nguyen Hue Walking Street; pack for tomorrow's flight"]],
+ alert:["Withdraw your Rooty cash share today: about ₫6.67M per family for 13 Nov.","Wear the sling in front, on the side away from the road."],
+ groups:[
+ ["Sling",[["Phone, card, passport copy",S],["Small notes for bargaining",S],["Neha's sling + second card",N]]],
+ ["Daypack",[["Foldable tote / duffel for purchases",A],["Water, sunscreen, caps",A],["Yuvaan's snacks + wipes",Y]]],
+ ["Tonight",[["Rooty cash share ₫6.67M set aside in an envelope",S],["Suitcases packed, 1 piece each for VN6103",A],["Alarm set – leave hotel 7:15 tomorrow",S]]],
+ ]},
+{id:"d12",dow:"Thu",dnum:"12",label:"Thu 12 Nov",title:"Fly to Phu Quoc",meta:["VN 6103 · SGN 09:55 → PQC 10:55","PNR D3URQ8 · Stay: Solera 2"],
+ timeline:[["7:15","Leave Otis for SGN Terminal 3 (domestic)"],["~7:45","Check in at the Pacific Airlines counter (VN 6103 is operated by Pacific)"],["10:55","Land Phu Quoc – Rooty bus pickup"],["Afternoon","Check in at Solera 2; rest; Grand World in the evening"]],
+ alert:["Check in at Pacific Airlines, not Vietnam Airlines.","Pay Solera 2 (₫17.84M for the group) at check-in."],
+ groups:[
+ ["Sling",[["3 passports",A],["Vietnam Airlines e-ticket PNR <code>D3URQ8</code>",A],["Phone, card, VND",S],["Rooty driver's WhatsApp saved",S]]],
+ ["Cabin bag",[["Power bank",S],["Medicines",A],["Yuvaan's snacks + tablet",Y]]],
+ ["Evening at Grand World",[["Light layer, mosquito repellent",A],["Swim things ready for tomorrow",A]]],
+ ]},
+{id:"d13",dow:"Fri",dnum:"13",label:"Fri 13 Nov",title:"Island hopping + Hon Thom + Sunset Town shows",meta:["Rooty private tour","Drop after Kiss of the Sea (~22:30)"],
+ timeline:[["Morning","Rooty pickup at Solera 2 – be ready before the agreed time (board before 10:00 or overtime charges apply)"],["Day","Speedboat, snorkelling, May Rut Ngoai, buffet lunch at Hon Thom, Aquatopia"],["Evening","Cable car back, Kiss Bridge, Symphony of the Sea (19:45) & Kiss of the Sea (21:00)"]],
+ alert:["Pay the Rooty guide your cash share (~₫6.67M) and get it noted.","Motion-sickness tablet 30–45 minutes before the boat.","No phones on neck straps at Aquatopia."],
+ groups:[
+ ["Money & documents",[["Rooty cash share in an envelope",S],["Passport copies only (originals in safe)",S],["Phone + card",S]]],
+ ["Wear",[["Swimwear under clothes",A],["Rash guard for Yuvaan",Y],["Floaters / Crocs",A],["Caps & sunglasses",A]]],
+ ["Daypack + dry bag",[["Towel + full change of clothes × 3",A],["Bag for wet clothes",A],["Waterproof phone pouch (no neck strap)",A],["Sunscreen (reapply after every swim)",A],["Goggles + arm bands",Y],["Motion-sickness tablets",A],["Water bottles + snacks",A],["Power bank",S]]],
+ ["For the shows",[["Light jacket for the evening",A],["Ear plugs / ear muffs for fireworks",Y],["Mosquito repellent",A]]],
+ ]},
+{id:"d14",dow:"Sat",dnum:"14",label:"Sat 14 Nov",title:"VinWonders – full day",meta:["Open 9:00–19:30","Saturday – expect bigger crowds"],
+ timeline:[["9:00","Arrive at opening – big rides first"],["14:00","Mermaid show at the Sea Shell (go at 13:00 for seats)"],["18:45","Once night show"]],
+ alert:["It's a Saturday: Top-4 Fastpass ($11.60 in the VinWonders app) is more useful today.","Check height limits for Yuvaan at each ride entrance."],
+ groups:[
+ ["Sling",[["VinWonders QR tickets / app open",S],["Phone, card, VND",S],["Passport copy",S]]],
+ ["Daypack",[["Swimwear + towel for Typhoon World water park",A],["Change of clothes for Yuvaan",Y],["Waterproof pouch (no neck strap)",A],["Sunscreen, caps",A],["Refillable water bottles",A],["Snacks",Y],["Power bank",S],["Rain poncho",A]]],
+ ["Wear",[["Comfortable walking shoes",A],["Light clothes that dry fast",A]]],
+ ]},
+{id:"d15",dow:"Sun",dnum:"15",label:"Sun 15 Nov",title:"Vinpearl Safari + Grand World",meta:["Safari 9:00–16:00 (no entry after 15:00)","Pack for tomorrow's flight"],
+ timeline:[["9:00","Safari bus through the wildlife zone, then the Open Zoo"],["Afternoon","Teddy Bear Museum / Grand World"],["Evening","Pack and weigh bags – VN1236 at 09:50 tomorrow"]],
+ alert:["Giraffe feeding costs about ₫40k – carry small notes.","Tonight: tell Rooty the 16 Nov pickup time (~7:30)."],
+ groups:[
+ ["Sling",[["Safari QR tickets",S],["Small VND notes",S],["Phone + card",S]]],
+ ["Daypack",[["Caps, sunscreen, mosquito repellent",A],["Water + snacks",A],["Yuvaan's wipes + spare T-shirt",Y]]],
+ ["Tonight",[["Suitcases packed, 1 piece each",A],["Jackets on top – Hanoi is cooler",A],["Passports + e-ticket <code>D3URQ8</code> in the sling",S],["Alarm set – leave Solera ~7:30",S]]],
+ ]},
+{id:"d16",dow:"Mon",dnum:"16",label:"Mon 16 Nov",title:"Fly to Hanoi + Old Quarter evening",meta:["VN 1236 · PQC 09:50 → HAN 12:05","Stay: Dream Boutique Hotel"],
+ timeline:[["~7:30","Rooty drop from Solera 2 to Phu Quoc airport"],["12:05","Land Hanoi Noi Bai T1"],["Afternoon","Check in; Hoan Kiem Lake, Ngoc Son Temple, egg coffee"],["Evening","Water puppet show"]],
+ alert:["Pay Dream Boutique (₫24.96M for the group) at check-in.","It's 16–25°C in Hanoi – jackets in the cabin bag."],
+ groups:[
+ ["Sling",[["3 passports",A],["Vietnam Airlines e-ticket PNR <code>D3URQ8</code>",A],["Phone, card, VND",S]]],
+ ["Cabin bag",[["Light jackets for all 3",A],["Power bank, medicines",A],["Yuvaan's snacks + tablet",Y]]],
+ ["Evening out",[["Sling with small VND",S],["Light layer",A],["Puppet show tickets",S]]],
+ ]},
+{id:"d17",dow:"Tue",dnum:"17",label:"Tue 17 Nov",title:"Ninh Binh day trip",meta:["Pickup 7:25–8:00 · back ~19:30","Bai Dinh – Trang An – Mua Cave"],
+ timeline:[["7:25–8:00","Asia Tour Deals pickup from the hotel"],["10:30","Bai Dinh Pagoda (electric car)"],["12:30","Buffet lunch (veg available)"],["13:30","Trang An – 2-hour boat ride"],["16:00","Mua Cave – about 500 steps"]],
+ alert:["Shoulders and knees covered at Bai Dinh.","Lunch, entry, boat, water and tips are already paid."],
+ groups:[
+ ["Wear",[["Covered clothes (trousers / long skirt, sleeves)",A],["Good walking shoes for Mua Cave steps",A],["Caps & sunglasses for the boat",A]]],
+ ["Daypack",[["Water bottles + snacks",A],["Sunscreen, wipes, sanitiser",A],["Light jacket",A],["Small VND for drinks",S],["Power bank",S]]],
+ ]},
+{id:"d18",dow:"Wed",dnum:"18",label:"Wed 18 Nov",title:"Historic Hanoi + pack for the cruise",meta:["Ho Chi Minh Complex · Temple of Literature · Hoa Lo","Last night at Dream Boutique"],
+ timeline:[["Morning","Ho Chi Minh Mausoleum (mornings only) & One Pillar Pagoda"],["Midday","Temple of Literature, Imperial Citadel"],["Afternoon","Hoa Lo Prison"],["Evening","Pack overnight bag for the cruise"]],
+ alert:["Mausoleum: no shorts or sleeveless tops, hats off, silence inside.","Hotel check-out is tomorrow – book the 20 Nov night if not done."],
+ groups:[
+ ["Wear",[["Covered clothes for all 3",A],["Walking shoes",A]]],
+ ["Sling & daypack",[["Phone, card, VND",S],["Passport copy",S],["Water, umbrella, snacks",A]]],
+ ["Tonight – cruise overnight bag",[["Original passports for cruise check-in",A],["Swimwear + kayaking clothes",A],["Light jacket for the deck",A],["Sleepwear + toiletries",A],["Motion-sickness tablets",A],["Chargers + power bank",S],["Main suitcases ready for the transfer car",A]]],
+ ]},
+{id:"d19",dow:"Thu",dnum:"19",label:"Thu 19 Nov",title:"Lan Ha Bay cruise – overnight",meta:["Halora cruise · 6 junior suites","Car from Hanoi Old Quarter"],
+ timeline:[["Morning","Transfer Hanoi → harbour (19-seat car)"],["Midday","Board – crew carries bags onto the boat"],["Afternoon","Kayaking, caves, swimming, squid fishing"],["Night","Dinner on board (Indian veg requested)"]],
+ alert:["Original passports are required at cruise check-in.","Take the motion-sickness tablet before boarding if needed."],
+ groups:[
+ ["Sling",[["3 original passports",A],["Phone, card, some VND / USD for extras",S]]],
+ ["Overnight bag",[["Swimwear, towel, change of clothes",A],["Sunscreen, caps",A],["Light jacket for evening",A],["Medicines (incl. Yuvaan's)",A],["Chargers, power bank",S],["Yuvaan's comfort item + tablet",Y]]],
+ ]},
+{id:"d20",dow:"Fri",dnum:"20",label:"Fri 20 Nov",title:"Back to Hanoi + final shopping",meta:["Morning on the bay, lunch on board","Hanoi hotel night (to book)"],
+ timeline:[["Sunrise","Tai Chi / morning activity on deck"],["Midday","Lunch, then transfer back to Hanoi"],["Evening","Old Quarter shopping; pack for home"]],
+ alert:["Hanoi Old Quarter is good for cheap jackets and souvenirs.","Tonight: online check-in for TG 561 if open; set the alarm for 7:00."],
+ groups:[
+ ["Shopping",[["Foldable duffel / tote",A],["Sling with VND (spend leftover dong)",S]]],
+ ["Tonight",[["Weigh suitcases for Thai Airways",A],["Passports + e-visas + PNR <code>7J3SOF</code> in the sling",S],["Snacks & activities for the 6.5-hour Bangkok layover",Y],["Leave hotel by 7:00–7:15",S]]],
+ ]},
+{id:"d21",dow:"Sat",dnum:"21",label:"Sat 21 Nov",title:"Hanoi → Bangkok → Mumbai → Pune",meta:["TG 561 · HAN 10:35 · TG 317 · BOM 22:00","PNR 7J3SOF"],
+ timeline:[["7:00–7:15","Leave hotel for Noi Bai T2 (international)"],["10:35","TG 561 Hanoi → Bangkok (arr 12:25)"],["18:55","TG 317 Bangkok → Mumbai (arr 22:00)"],["Night","Drive Mumbai → Pune"]],
+ alert:["Exchange or spend leftover VND before leaving – it's hard to change in India.","Book or confirm the Mumbai → Pune car."],
+ groups:[
+ ["Sling",[["3 passports",A],["Thai e-ticket PNR <code>7J3SOF</code>",A],["Cards + INR for Mumbai",S]]],
+ ["Cabin bag",[["Power bank",S],["Light jackets",A],["Medicines",A],["Yuvaan's tablet, headphones, snacks, change of clothes",Y],["Toothbrushes for the layover",A]]],
+ ["Hotel room check",[["Hotel safe emptied",S],["Chargers out of the sockets",A],["Under the beds & bathroom checked",N]]],
+ ]},
+];
+const TRIP_START=new Date(2026,10,9), TRIP_END=new Date(2026,10,21);
+const store={get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let ticks=store.get("vn-ticks")||{};
+function itemsOf(d){const out=[];d.groups.forEach((g,gi)=>g[1].forEach((it,ii)=>out.push(d.id+"-"+gi+"-"+ii)));return out}
+function pct(d){const ids=itemsOf(d);if(!ids.length)return 0;return Math.round(ids.filter(i=>ticks[i]).length/ids.length*100)}
+function pickInitial(){const saved=store.get("vn-day");if(location.hash){const h=location.hash.slice(1);if(DAYS.some(d=>d.id===h))return h}
+ const t=new Date();t.setHours(0,0,0,0);if(t>=TRIP_START&&t<=TRIP_END){return "d"+String(t.getDate()).padStart(2,"0")}
+ return saved&&DAYS.some(d=>d.id===saved)?saved:"pre"}
+let current=pickInitial();
+const strip=document.getElementById("strip"), host=document.getElementById("day");
+function renderStrip(){strip.innerHTML="";DAYS.forEach(d=>{const b=document.createElement("button");b.className="day-btn"+(d.id==="pre"?" pre":"");b.type="button";b.setAttribute("aria-pressed",d.id===current);b.setAttribute("aria-label",d.label);
+ b.innerHTML=`<span class="dow">${d.dow}</span><span class="dnum">${d.id==="pre"?"List":d.dnum}</span><span class="bar"><i style="width:${pct(d)}%"></i></span>`;
+ b.onclick=()=>{current=d.id;store.set("vn-day",current);renderStrip();renderDay();host.scrollIntoView({block:"start",behavior:"smooth"})};strip.appendChild(b)});
+ const active=strip.querySelector('[aria-pressed="true"]');if(active)active.scrollIntoView({inline:"center",block:"nearest"})}
+function tagHtml(w){const name={S:"Satyam",N:"Neha",Y:"Yuvaan",A:"Family"}[w];return `<span class="tag t-${w}">${name}</span>`}
+function renderDay(){const d=DAYS.find(x=>x.id===current);const p=pct(d);
+ let h=`<div class="dayhead"><span class="eyebrow">${d.label}</span><h2>${d.title}</h2><div class="meta">${d.meta.map(m=>`<span>${m}</span>`).join("")}</div>
+ <div class="progress"><span class="track"><i style="width:${p}%"></i></span><span id="pc">${p}% packed</span></div></div>`;
+ if(d.timeline.length){h+=`<div class="timeline">${d.timeline.map(t=>`<span class="tm">${t[0]}</span><div>${t[1]}</div>`).join("")}</div>`}
+ if(d.alert.length){h+=`<div class="alert"><strong>Remember today</strong><ul>${d.alert.map(a=>`<li>${a}</li>`).join("")}</ul></div>`}
+ d.groups.forEach((g,gi)=>{h+=`<div class="group"><h3>${g[0]}</h3>`;g[1].forEach((it,ii)=>{const id=d.id+"-"+gi+"-"+ii;const on=!!ticks[id];
+  h+=`<label class="item${on?" checked":""}" for="${id}"><input type="checkbox" id="${id}" ${on?"checked":""}><span class="txt"><span>${it[0]}</span>${it[2]?`<small>${it[2]}</small>`:""}</span><span class="tags">${tagHtml(it[1])}</span></label>`});h+=`</div>`});
+ h+=`<div class="tools" id="tools"><button class="btn warn" type="button" id="reset">Clear ticks for this day</button></div>`;
+ host.innerHTML=h;
+ host.querySelectorAll('input[type="checkbox"]').forEach(cb=>cb.addEventListener("change",()=>{ticks[cb.id]=cb.checked;if(!cb.checked)delete ticks[cb.id];store.set("vn-ticks",ticks);cb.closest(".item").classList.toggle("checked",cb.checked);updateProgress(d)}));
+ document.getElementById("reset").onclick=()=>{const t=document.getElementById("tools");t.innerHTML=`<span class="confirm">Clear all ticks for ${d.label}?</span><button class="btn warn" type="button" id="yes">Clear</button><button class="btn" type="button" id="no">Keep</button>`;
+  document.getElementById("yes").onclick=()=>{itemsOf(d).forEach(i=>delete ticks[i]);store.set("vn-ticks",ticks);renderStrip();renderDay()};document.getElementById("no").onclick=renderDay};
+}
+function updateProgress(d){const p=pct(d);host.querySelector(".progress .track i").style.width=p+"%";document.getElementById("pc").textContent=p+"% packed";
+ const btn=[...strip.children][DAYS.indexOf(d)];if(btn)btn.querySelector(".bar i").style.width=p+"%"}
+renderStrip();renderDay();
+</script>
+
+</body></html>
