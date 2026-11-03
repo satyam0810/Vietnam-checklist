@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0f5c4a">
-<title>Vietnam Day-wise Checklist</title>
+<title>Vietnam Trip Checklist</title>
 <style>
 :root{--bg:#f6f8f7;--card:#fff;--ink:#1b2622;--muted:#5b6b65;--line:#d9e2de;--brand:#0f5c4a;--brand-ink:#fff;--soft:#dcefe8;--done:#c9e7d9;--warn:#8a5a00;--warn-soft:#fff4d6}
 @media (prefers-color-scheme:dark){:root{--bg:#0f1513;--card:#18211e;--ink:#e6eeea;--muted:#9aaba4;--line:#2a3632;--brand:#5fc3a4;--brand-ink:#0f1513;--soft:#1e3a31;--done:#1f3a30;--warn:#f0c46a;--warn-soft:#3a3020}}
@@ -15,6 +15,9 @@ header{position:sticky;top:0;z-index:5;background:var(--brand);color:var(--brand
 .hwrap{max-width:760px;margin:0 auto;padding:0 16px}
 h1{margin:0;font-size:18px}
 .sub{font-size:13px;opacity:.9}
+.tabs{display:flex;gap:6px;padding:10px 16px 0;max-width:760px;margin:0 auto}
+.tabs button{flex:1;border:1px solid rgba(255,255,255,.45);background:transparent;color:var(--brand-ink);border-radius:999px;padding:7px 6px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap}
+.tabs button.on{background:var(--brand-ink);color:var(--brand)}
 .strip{display:flex;gap:8px;overflow-x:auto;padding:10px 16px 2px;max-width:760px;margin:0 auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .strip::-webkit-scrollbar{display:none}
 .chip{flex:0 0 auto;border:1px solid rgba(255,255,255,.45);background:transparent;color:var(--brand-ink);border-radius:12px;padding:6px 10px;font-size:13px;line-height:1.2;text-align:center;cursor:pointer;min-width:58px}
@@ -23,6 +26,9 @@ h1{margin:0;font-size:18px}
 .chip.on{background:var(--brand-ink);color:var(--brand)}
 .chip.full{box-shadow:inset 0 -3px 0 #9be3c6}
 main{max-width:760px;margin:0 auto;padding:14px 16px 40px}
+.topbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.topbar button,.tools button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:7px 13px;font-size:14px;cursor:pointer}
+.topbar button.on{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
 .dayhead h2{margin:0;font-size:20px}
 .dayhead .city{color:var(--brand);font-weight:700;font-size:14px}
 .dayhead .stay{color:var(--muted);font-size:13px;margin-top:2px}
@@ -35,7 +41,8 @@ main{max-width:760px;margin:0 auto;padding:14px 16px 40px}
 .alert{background:var(--warn-soft);border-radius:12px;padding:10px 14px;margin-top:10px;font-size:14px}
 .alert b{color:var(--warn)}
 section{margin-top:16px}
-h3{font-size:14px;margin:0 0 6px;color:var(--brand);text-transform:uppercase;letter-spacing:.03em}
+h3{font-size:14px;margin:0 0 6px;color:var(--brand);text-transform:uppercase;letter-spacing:.03em;display:flex;justify-content:space-between}
+h3 small{color:var(--muted);font-weight:500;text-transform:none;letter-spacing:0}
 ul{list-style:none;margin:0;padding:0;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
 li{border-top:1px solid var(--line)}
 li:first-child{border-top:0}
@@ -46,22 +53,12 @@ input[type=checkbox]{width:22px;height:22px;flex:0 0 22px;margin-top:1px;accent-
 .wA{background:#cfe3dc}.wS{background:#bcd8f5}.wN{background:#f5cbe0}.wY{background:#ffe79a}
 li.done{background:var(--done)}
 li.done .txt{text-decoration:line-through;opacity:.65}
-.legend{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px;font-size:12px;color:var(--muted);align-items:center}
-.tools{display:flex;gap:8px;margin-top:18px}
-.tools button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:7px 13px;font-size:14px;cursor:pointer}
-footer{text-align:center;color:var(--muted);font-size:12px;padding:10px 16px 30px}
-.tabs{display:flex;gap:8px;padding:10px 16px 0;max-width:760px;margin:0 auto}
-.tabs button{flex:1;border:1px solid rgba(255,255,255,.45);background:transparent;color:var(--brand-ink);border-radius:999px;padding:7px 10px;font-size:14px;font-weight:600;cursor:pointer}
-.tabs button.on{background:var(--brand-ink);color:var(--brand)}
-.tools{flex-wrap:wrap}
-.tools button.on{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
-.topbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
-.topbar button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:7px 13px;font-size:14px;cursor:pointer}
-.topbar button.on{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
 .hide-done li.done{display:none}
 .hide-done section.alldone{display:none}
 .alldone-msg{display:none;color:var(--muted);font-size:14px;margin-top:14px}
 .hide-done .alldone-msg.show{display:block}
+.legend{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px;font-size:12px;color:var(--muted);align-items:center}
+.tools{display:flex;gap:8px;margin-top:18px}
 table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px}
 td,th{padding:10px 12px;border-top:1px solid var(--line);text-align:left;vertical-align:top}
 th{background:var(--soft);font-size:13px}
@@ -69,36 +66,42 @@ th{background:var(--soft);font-size:13px}
 .g{background:#bfe6c9}.b{background:#bcd8f5}.y{background:#ffe79a}.p{background:#dccbf5}.po{background:#fff;border:2px solid #b49ae3}.s{background:#ddd}.r{background:#f8c9c4}
 .plain li{padding:11px 14px}
 .plain .m{font-size:13px;color:var(--muted)}
+.plain a{color:var(--brand)}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:10px 16px 30px}
 [hidden]{display:none!important}
 </style>
 </head>
 <body>
 <header>
   <div class="hwrap">
-    <h1>Vietnam · Day-wise checklist</h1>
+    <h1>Vietnam Trip Checklist</h1>
     <div class="sub">Satyam · Neha · Yuvaan · 9–21 Nov 2026</div>
   </div>
   <div class="tabs">
-    <button id="tabDays" class="on">Day-wise</button>
-    <button id="tabCards">Cards &amp; lounges</button>
+    <button data-tab="pack">Packing list</button>
+    <button data-tab="days">Day-wise</button>
+    <button data-tab="cards">Cards &amp; lounges</button>
   </div>
-  <nav class="strip" id="strip"></nav>
+  <nav class="strip" id="strip" hidden></nav>
 </header>
-<main id="main"></main>
+
+<main id="pack" hidden></main>
+<main id="days" hidden></main>
 
 <main id="cards" hidden>
   <section style="margin-top:0">
     <h3>Which card where</h3>
     <table>
       <tr><th>Label</th><th>Card</th><th>Use for</th></tr>
-      <tr><td><span class="tag g">PAY 1</span></td><td>IDFC First Select credit</td><td>All spending in Vietnam (zero forex markup)</td></tr>
-      <tr><td><span class="tag g">PAY 2</span></td><td>AU ixigo credit (Neha's bag)</td><td>Backup if PAY 1 fails (zero markup)</td></tr>
+      <tr><td><span class="tag g">PAY 1</span></td><td>IDFC First Select credit</td><td>Grab, food, shops, hotels – zero forex markup</td></tr>
+      <tr><td><span class="tag g">PAY 2</span></td><td>AU ixigo credit (Neha's bag)</td><td>Backup if PAY 1 fails; Neha's Grab – zero markup</td></tr>
+      <tr><td><span class="tag g">TRY FIRST</span></td><td>BOB Eterna (RuPay)</td><td>Bigger card payments where RuPay is accepted, up to ~₹33k per statement cycle (15× points ≈ +1.4% net). Declined → PAY 1</td></tr>
       <tr><td><span class="tag b">CASH</span></td><td>Niyo SBM debit</td><td>Dong from ATMs only · ₹200 per withdrawal</td></tr>
       <tr><td><span class="tag y">LOUNGE-IN</span></td><td>BOB Eterna (Satyam) · IDFC Select debit (Neha as companion) · IDFC business debit (Yuvaan)</td><td>Mumbai T2 on 9 Nov only</td></tr>
       <tr><td><span class="tag p">LOUNGE-ABROAD</span></td><td>SBI Priority Pass · IndusInd Priority Pass</td><td>Hanoi + Bangkok 21 Nov · Bangkok 10 Nov</td></tr>
       <tr><td><span class="tag po">GUEST FEE</span></td><td>SBI PRIME PRO · IndusInd Pinnacle</td><td>Lounge guest fees only (SBI US$27, IndusInd US$35)</td></tr>
       <tr><td><span class="tag s">SPARE</span></td><td>2nd IDFC business debit</td><td>Backup for Mumbai lounge</td></tr>
-      <tr><td><span class="tag r">NO SPEND ABROAD</span></td><td>SBI PRIME PRO, IndusInd Pinnacle, BOB Eterna, both IDFC business cards</td><td>High forex fee or business account</td></tr>
+      <tr><td><span class="tag r">NO SPEND ABROAD</span></td><td>SBI PRIME PRO, IndusInd Pinnacle, both IDFC business cards</td><td>3.5% forex fee or business account</td></tr>
     </table>
     <div class="alert"><b>Always pay in VND.</b> If a card machine or ATM offers to charge you in rupees, say no – it adds 3–5%.</div>
   </section>
@@ -113,60 +116,91 @@ th{background:var(--soft);font-size:13px}
       <tr><td>21 Nov, before 10:35</td><td>Hanoi T2 – SH Premium, gate 28</td><td>SBI Priority Pass, visit 1</td></tr>
       <tr><td>21 Nov, 12:25–18:55</td><td>Bangkok – Plaza Premium (Concourse G, 24 h) / Miracle / Coral</td><td>SBI Priority Pass, visit 2 · guests on SBI PRIME PRO</td></tr>
     </table>
+    <div class="alert">Priority Pass app holds one membership per login: use <b>Priority Pass+</b> if available, otherwise a second email for SBI. Keep screenshots of both digital cards in a "Lounge cards" album.</div>
   </section>
   <section>
     <h3>Where to keep cards</h3>
     <ul class="plain">
       <li><b>Wallet</b><div class="m">PAY 1, CASH, a few dong notes</div></li>
-      <li><b>Sling bag, zipped pocket</b><div class="m">LOUNGE-ABROAD, GUEST FEE cards, passports</div></li>
-      <li><b>Neha's bag</b><div class="m">PAY 2, some USD</div></li>
-      <li><b>Hotel safe after 9 Nov</b><div class="m">LOUNGE-IN and SPARE cards – take them out again for the trip home</div></li>
+      <li><b>Sling bag, back pocket</b><div class="m">LOUNGE-ABROAD, GUEST FEE cards, passports</div></li>
+      <li><b>Neha's bag</b><div class="m">PAY 2, some USD, insurance helpline card</div></li>
+      <li><b>Hotel safe after 9 Nov</b><div class="m">LOUNGE-IN and SPARE cards – take them out again on 20 Nov</div></li>
       <li><b>Leave at home</b><div class="m">Axis IndianOil, OneCard, SBI Global debit, PNB RuPay, SBI Pride debit</div></li>
     </ul>
   </section>
+  <section>
+    <h3>Insurance &amp; helplines</h3>
+    <ul class="plain">
+      <li><b>Travel insurance</b><div class="m">IndusInd Travel Care (via Policybazaar), 9–21 Nov, all 3 covered · medical US$250,000 each · policy PDF in Drive and Files (offline)</div></li>
+      <li><b>Emergency assistance (Europ Assistance)</b><div class="m"><a href="tel:+912267347843">+91 22 6734 7843</a> · <a href="tel:+912267347844">+91 22 6734 7844</a> – call before going to hospital if you can</div></li>
+      <li><b>Policybazaar claims</b><div class="m">From abroad <a href="tel:+911246166633">+91 124 616 6633</a> · India 1800 258 5881 · travelclaims@policybazaar.com</div></li>
+      <li><b>IndusInd Insurance WhatsApp</b><div class="m">74004 22200</div></li>
+      <li><b>For claims</b><div class="m">Police report for theft / lost passport · airline report for delayed or lost bags before leaving the airport · keep all bills</div></li>
+      <li><b>Not covered</b><div class="m">Riding a scooter yourself without an International Driving Permit + helmet · injuries while drunk</div></li>
+      <li><b>Vietnam emergency</b><div class="m">Police 113 · Fire 114 · Ambulance 115</div></li>
+    </ul>
+  </section>
 </main>
+
 <footer>Ticks are saved on this phone only.</footer>
 
 <script>
 /* who: A = all 3, S = Satyam, N = Neha, Y = Yuvaan */
+const PACK = {id:"pack", title:"Packing list", groups:[
+  ["Documents",[["3 passports + 3 printed e-visas","A"],["Printed tickets & vouchers: Thai, Vietnam Airlines, hotels, Rooty, cruise, Ninh Binh, Vin, fast-track","S"],["Passport copies (2 sets) + passport photos","A"],["Travel insurance printout + helpline card (in Neha's bag)","N"],["All tickets, vouchers and the policy saved offline in Files on both phones","A"]]],
+  ["Cards & money",[["PAY 1 IDFC Select credit + CASH Niyo – Satyam's wallet","S"],["PAY 2 AU ixigo + some USD – Neha's bag","N"],["BOB Eterna (try first for big payments; Mumbai lounge)","S"],["LOUNGE-ABROAD: SBI + IndusInd Priority Pass cards (or screenshots)","S"],["GUEST FEE: SBI PRIME PRO + IndusInd Pinnacle","S"],["LOUNGE-IN: IDFC Select debit, IDFC business debit + SPARE","S"],["USD cash split between two bags; some INR for Mumbai","S"],["Leave at home: Axis IndianOil, OneCard, SBI Global, PNB RuPay, SBI Pride","S"]]],
+  ["Phones & gadgets",[["iPhone + charger; Neha's phone + charger","A"],["Power bank (cabin bag only) + short cables","S"],["2-pin travel adapter / multi-port charger","S"],["Insta360 X6 + invisible selfie stick + floating grip + wrist strap","S"],["X6 spare battery (1–2), lens guards, lens cloth, 128–256 GB card – cabin bag","S"],["Yuvaan's tablet + headphones (downloaded shows)","Y"]]],
+  ["Bags",[["G4Free sling (iPhone front pocket, X6 + stick in main, passports in back pocket)","S"],["Neha's sling","N"],["Daypack + dry bag for boat days","A"],["Waterproof phone pouches + floating phone strap","A"],["Foldable duffel for shopping","A"],["Luggage locks; packing cubes","A"]]],
+  ["Clothes",[["Light, breathable day clothes (30 °C + humid in the south)","A"],["Light jackets for all 3 (Hanoi 16–25 °C, cruise deck)","A"],["Covered clothes for temples & the mausoleum","A"],["Swimwear + rash guard; Yuvaan's goggles + arm bands","A"],["Sleepwear; caps; sunglasses","A"],["Rain poncho / compact umbrella","A"]]],
+  ["Shoes",[["Satyam: ASICS Gel-Excite 10 (broken in) + white Crocs","S"],["Spare stock insole if you switch to Superfeet","S"],["Neha: walking shoes + strap sandals","N"],["Yuvaan: Skechers + strap sandals / Crocs","Y"],["Quick-dry socks, 2–3 pairs each","A"],["Blister plasters","A"]]],
+  ["Health & toiletries",[["Personal medicines","A"],["Fever medicine for adults + Yuvaan; thermometer","A"],["ORS, anti-diarrhoea, motion-sickness tablets, antihistamine","A"],["Band-aids, antiseptic","A"],["Sunscreen, mosquito repellent, sanitiser, wet wipes","A"],["Toiletries (liquids under 100 ml in the cabin bag)","A"]]],
+  ["Yuvaan",[["Water bottle + snacks","Y"],["Ear muffs for fireworks","Y"],["Comfort item","Y"],["Activity book / small games for the 6½ h Bangkok layover","Y"],["Change of clothes in the cabin bag","Y"]]],
+  ["Food backup",[["Indian dry snacks (thepla, khakhra, chivda) for veg backup","A"],["A few instant noodle / ready-to-eat packs","A"]]],
+  ["Satyam's clothes – tops",[["5 quick-dry T-shirts (light colours)","S"],["2 polo / casual shirts for dinners","S"],["1 light linen/cotton long-sleeve shirt (temples, sun on boats)","S"],["1 full-sleeve T-shirt / light sweatshirt (Hanoi evenings, cruise)","S"]]],
+  ["Satyam's clothes – bottoms",[["3 shorts (1 quick-dry for boats/water park)","S"],["2 light trousers / chinos – one full-length for the mausoleum","S"],["1 track pants / joggers (flights, cruise)","S"]]],
+  ["Satyam's clothes – layers & water",[["1 light jacket (windcheater / packable down)","S"],["Rain poncho / compact umbrella","S"],["2 swim shorts","S"],["1 long-sleeve rash guard","S"],["1 quick-dry microfibre towel","S"]]],
+  ["Satyam's clothes – basics & accessories",[["7 underwear (quick-dry)","S"],["4–5 pairs quick-dry socks","S"],["2 sets sleepwear","S"],["Cap / hat + sunglasses","S"],["Belt","S"],["Buff / neck gaiter (optional)","S"]]],
+  ["Satyam – packing setup",[["Flight outfit: joggers, T-shirt, light jacket, Gel-Excite 10","S"],["Packing cube 1 – south (T-shirts, shorts, swimwear)","S"],["Packing cube 2 – Hanoi (trousers, long sleeves, jacket)","S"],["One change of clothes in the cabin bag","S"],["Leave ~20% space for shopping; plan one laundry (15 Nov Phu Quoc or Hanoi Old Quarter)","S"]]]
+]};
+
 const DAYS = [
 {id:"pre", chip:["Now","to 7 Nov"], date:"Before the trip", city:"Pune", title:"To-dos before you fly",
- keys:[["Urgent","Cruise balance (due 30 Oct), Ninh Binh balance (3 Nov), cancel extra HCMC booking (3 Nov)"]],
  groups:[
-  ["Payments & bookings",[["Confirm cruise balance $1,750 (+3%) is paid","S"],["Pay Ninh Binh balance $840 (+3%)","S"],["Cancel extra HCMC booking","S"],["Decide Phu Quoc & Hanoi stays, cancel extras; book Hanoi hotel for 20 Nov","S"],["Book transfers: Pune–Mumbai (9 & 21 Nov), Otis → SGN, Noi Bai → hotel, hotel → Noi Bai","S"],["Book water puppet tickets (18)","S"],["Buy travel insurance","A"],["Fill Vietnam pre-arrival form","A"]]],
+  ["Payments & bookings",[["Confirm cruise balance $1,750 (+3%) is paid","S"],["Pay Ninh Binh balance $840 (+3%)","S"],["Cancel extra HCMC booking","S"],["Decide Phu Quoc & Hanoi stays, cancel extras; book Hanoi hotel for 20 Nov","S"],["Book transfers: Pune–Mumbai (9 & 21 Nov), Otis → SGN, Noi Bai → hotel, hotel → Noi Bai","S"],["Book water puppet tickets (18)","S"],["Fill Vietnam pre-arrival form","A"]]],
+  ["Travel insurance",[["Bought – IndusInd Travel Care via Policybazaar (9–21 Nov, all 3)","S"],["WhatsApp IndusInd 74004 22200: are snorkelling, kayaking and island boat trips covered (Benefit 29)? Save the reply","S"],["Save helplines on both phones + paper copy","A"],["Policy PDF in Drive + Files offline (never on GitHub – it has passport numbers)","S"]]],
   ["Forex",[["Place forex orders: $2,800 (Neha) + $2,900 (Prashant) – lock rate","N"],["Collect shares: Siddesh, Yogesh → Neha","N"],["Check notes on delivery: clean $100, 2013 or newer","N"]]],
-  ["Cards & lounges",[["Call SBI Card 1860 180 1290 – Priority Pass on PRIME PRO; ask for membership no. by SMS/email","S"],["Add SBI Priority Pass to the Priority Pass app (digital card)","S"],["Check if any of Neha's cards include Priority Pass","N"],["Enable international use + limits: IDFC Select credit, AU ixigo, Niyo, SBI PRIME PRO, IndusInd Pinnacle","S"],["Load Niyo for ATM dong + buffer","S"],["Check lounge visits left in IDFC & BOB apps","S"],["Label cards: PAY · CASH · LOUNGE-IN · LOUNGE-ABROAD · GUEST FEE · SPARE","S"],["Save bank helpline numbers (phone + paper)","S"]]],
-  ["Shopping",[["Satyam's walking shoes (Gel-Excite 10 / GoWalk Max) – wear daily","S"],["Yuvaan's Skechers (Skech-Lite Pro or Bounder Zatic)","N"],["Strap sandals for Yuvaan / Neha if needed","N"],["Quick-dry socks + blister plasters","A"]]],
-  ["Phone & files",[["Install Grab, Priority Pass, Niyo, VinWonders, Vietnam Airlines, Thai Airways","A"],["Google Translate offline Vietnamese + Maps offline (HCMC, Phu Quoc, Hanoi)","A"],["eSIM bought & installed","A"],["Upload missing docs to Drive (Thai e-tickets for all, Vin e-tickets, fast-track voucher, insurance)","S"]]]
+  ["Cards & lounges",[["SBI Card 1860 180 1290 – Priority Pass on PRIME PRO; get membership no. by SMS/email","S"],["Priority Pass+ app if available; otherwise register SBI with a 2nd email; screenshot both cards","S"],["Check if any of Neha's cards include Priority Pass","N"],["Enable international + online use and limits: IDFC Select credit, AU ixigo, Niyo, BOB Eterna, SBI PRIME PRO, IndusInd Pinnacle","S"],["Ask BOBCARD: does Eterna (RuPay) work in Vietnam?","S"],["Link IDFC Select credit to Grab (AU ixigo 2nd, cash on); AU ixigo on Neha's Grab","S"],["Load Niyo for ATM dong + buffer","S"],["Check lounge visits left in IDFC & BOB apps","S"],["Label cards: PAY · CASH · LOUNGE-IN · LOUNGE-ABROAD · GUEST FEE · SPARE","S"],["Save bank helpline numbers (phone + paper)","S"]]],
+  ["Shoes",[["Gel-Excite 10 bought – walk 5–8 km with the stock insole","S"],["Only if arches/heels ache: Superfeet Run Cushion (replace, don't stack)","S"],["Yuvaan's Skechers (Skech-Lite Pro or Bounder Zatic)","N"],["Quick-dry socks + blister plasters","A"]]],
+  ["Camera",[["Rent Insta360 X6, 8–22 Nov (weekly rate): floating grip, invisible selfie stick, lens guards, 1–2 spare batteries, 128–256 GB card","S"],["On delivery: check lens, charge, record a test clip, photo the condition","S"],["15-min practice: shoot → transfer → auto-edit → export","S"],["Free 50–100 GB on the iPhone","S"]]],
+  ["Apps (sign in at home)",[["Grab, Xanh SM, Be","A"],["Google Maps – offline maps of HCMC, Phu Quoc, Hanoi, Ninh Binh","A"],["Google Translate – offline Vietnamese","A"],["Zalo + WhatsApp","A"],["Thai Airways, Vietnam Airlines, Priority Pass","S"],["VinWonders/Vinpearl, Klook, Agoda/Booking","S"],["IDFC, AU 0101, Niyo, bobcard, SBI Card, IndusInd","S"],["XE Currency, Splitwise, HappyCow","A"],["Insta360, Google Photos/iCloud backup, eSIM app","S"],["Add this page to the home screen","A"]]],
+  ["Group",[["Upload missing docs to Drive (Thai e-tickets for all, Vin e-tickets, fast-track voucher, insurance)","S"]]]
  ]},
 {id:"d08", chip:["Sun","8 Nov"], date:"Sun 8 Nov", city:"Pune", title:"Packing day",
+ keys:[["Pack","Use the Packing list tab"]],
  groups:[
-  ["Documents",[["3 passports + 3 printed e-visas","A"],["Printed tickets & vouchers: Thai, Vietnam Airlines, hotels, Rooty, cruise, Ninh Binh, Vin, fast-track","S"],["Passport copies (2 sets) + photos","A"]]],
-  ["Cards & money",[["PAY 1 IDFC Select credit · CASH Niyo – Satyam's wallet","S"],["PAY 2 AU ixigo + some USD – Neha's bag","N"],["LOUNGE-ABROAD: SBI + IndusInd Priority Pass · GUEST FEE: SBI PRIME PRO + IndusInd Pinnacle – sling","S"],["LOUNGE-IN: BOB Eterna, IDFC Select debit, IDFC business debit + SPARE","S"],["Leave at home: Axis IndianOil, OneCard, SBI Global, PNB RuPay, SBI Pride","S"],["USD cash split between two bags; some INR","S"]]],
-  ["Clothes & shoes",[["Light jackets for all 3 (Hanoi 16–25 °C)","A"],["Covered clothes for temples & mausoleum","A"],["Swimwear, rash guard, goggles, arm bands","A"],["Walking shoes (broken in) + white Crocs","S"],["Neha: walking shoes + strap sandals","N"],["Yuvaan: Skechers + strap sandals / Crocs","Y"],["Quick-dry socks 2–3 pairs each","A"]]],
-  ["Health & gadgets",[["Medicines: personal, fever (adult + kids), ORS, motion sickness, antihistamine, band-aids, blister plasters","A"],["Sunscreen, repellent, sanitiser, wipes","A"],["Power bank (cabin only), cables, 2-pin adapter","S"],["Sling bags, daypack, dry bag, phone pouches, foldable duffel","A"]]],
-  ["Tonight",[["Weigh suitcases for Thai Airways","A"],["Charge phones, power bank, Yuvaan's tablet","A"]]]
+  ["Today",[["Pack everything on the Packing list tab","A"],["Weigh suitcases for Thai Airways","A"],["Charge phones, power bank, X6 + spare batteries, Yuvaan's tablet","A"],["Download shows for Yuvaan; offline maps check","A"],["Web check-in opens tomorrow – set a reminder","S"]]]
  ]},
 {id:"d09", chip:["Mon","9 Nov"], date:"Mon 9 Nov", city:"Pune → Mumbai", title:"Fly out overnight", stay:"On the plane",
  keys:[["15:30","Leave Pune for Mumbai T2"],["Lounge","BOB Eterna (Satyam) · IDFC Select debit + companion (Neha) · IDFC business debit (Yuvaan)"],["23:20","TG 318 Mumbai → Bangkok"]],
  groups:[
-  ["Morning",[["Web check-in TG 318 / TG 550","S"],["Suitcases weighed and locked","A"],["Phones charged, eSIM ready","A"],["Gas, lights, water off","S"]]],
+  ["Morning",[["Web check-in TG 318 / TG 550","S"],["Suitcases locked","A"],["Phones charged, eSIM ready","A"],["Gas, lights, water off","S"]]],
   ["Satyam's sling",[["3 passports + 3 printed e-visas","A"],["Thai e-tickets","S"],["Fast-track voucher (SGN, 10 Nov)","S"],["LOUNGE-IN cards + SPARE","S"],["LOUNGE-ABROAD + GUEST FEE cards","S"],["PAY 1, CASH, USD, INR","S"],["Phone + charger","S"]]],
-  ["Neha's bag",[["PAY 2 AU ixigo + some USD","N"],["Wipes, sanitiser","N"]]],
-  ["Cabin bag",[["Power bank","S"],["Medicine kit incl. Yuvaan's fever medicine","A"],["Light jackets for all 3","A"],["Neck pillows","A"],["Change of clothes for Yuvaan","Y"],["Yuvaan's tablet + headphones","Y"],["Snacks + empty water bottles","A"],["Toothbrushes & wet wipes","A"]]],
-  ["Wear",[["Walking shoes (easy to remove at security)","A"]]]
+  ["Neha's bag",[["PAY 2 AU ixigo + some USD","N"],["Insurance helpline card","N"],["Wipes, sanitiser","N"]]],
+  ["Cabin bag",[["Power bank + X6 and its batteries (not in checked bags)","S"],["Medicine kit incl. Yuvaan's fever medicine","A"],["Light jackets for all 3","A"],["Neck pillows","A"],["Change of clothes for Yuvaan","Y"],["Yuvaan's tablet + headphones","Y"],["Snacks + empty water bottles","A"],["Toothbrushes & wet wipes","A"]]],
+  ["Wear",[["Gel-Excite 10 (easy to remove at security)","S"]]]
  ]},
 {id:"d10", chip:["Tue","10 Nov"], date:"Tue 10 Nov", city:"Bangkok → Ho Chi Minh City", title:"Land in Saigon, shopping & night bus", stay:"Otis Apartment, Phu Nhuan",
  keys:[["05:05","Land Bangkok – stay airside"],["Lounge","IndusInd Priority Pass – optional (breakfast)"],["07:45","TG 550 → SGN, lands 09:15 T2"],["18:00","Night city bus tour from the Opera House"]],
  groups:[
-  ["At the airport",[["Passports + printed e-visas in hand","A"],["Fast-track voucher","S"],["Withdraw dong with Niyo (CASH) – one large withdrawal","S"],["Decline 'pay in INR' at the ATM","S"]]],
+  ["At the airport",[["Passports + printed e-visas in hand","A"],["Fast-track voucher","S"],["Withdraw dong with Niyo (CASH) – one large withdrawal","S"],["Decline 'pay in INR' at the ATM","S"],["Grab 7-seater to Otis (IDFC Select on Grab)","S"]]],
   ["After check-in",[["LOUNGE-IN + SPARE cards into the safe","S"],["Originals in safe; carry passport copy","S"]]],
   ["Sling",[["Phone, small dong notes, PAY 1","S"],["Neha: phone, PAY 2, wipes","N"]]],
-  ["Daypack",[["Water bottles","A"],["Sunscreen, caps, sunglasses","A"],["Umbrella","A"],["Yuvaan's snacks","Y"],["Foldable tote for shopping","A"]]]
+  ["Daypack",[["Water bottles","A"],["Sunscreen, caps, sunglasses","A"],["Umbrella","A"],["Yuvaan's snacks","Y"],["Foldable tote for shopping","A"]]],
+  ["Camera",[["Night bus: X6 on the stick held above the open deck","S"],["Tonight: charge X6, transfer + auto-edit clips","S"]]]
  ]},
 {id:"d11", chip:["Wed","11 Nov"], date:"Wed 11 Nov", city:"Ho Chi Minh City", title:"Saigon sightseeing & markets", stay:"Otis Apartment",
  groups:[
-  ["Sling",[["Phone, PAY 1, passport copy","S"],["Small notes for bargaining","S"],["Neha's sling + PAY 2","N"]]],
+  ["Sling (wear it in front in markets)",[["Phone, PAY 1, passport copy","S"],["Small notes for bargaining","S"],["Neha's sling + PAY 2","N"]]],
   ["Daypack",[["Foldable duffel for purchases","A"],["Water, sunscreen, caps","A"],["Yuvaan's snacks + wipes","Y"]]],
   ["Wear",[["Walking shoes","A"]]],
   ["Tonight",[["Rooty cash share ₫6.67M in an envelope","S"],["Pack – 1 checked piece each","A"],["Confirm 12 Nov airport transfer","S"],["Alarm – leave at 07:15","S"]]]
@@ -176,29 +210,30 @@ const DAYS = [
  groups:[
   ["Room check",[["Safe emptied (passports, LOUNGE-IN cards, cash)","S"],["Chargers unplugged","A"]]],
   ["Sling",[["3 passports","A"],["Vietnam Airlines e-ticket","S"],["Phone, PAY 1, dong","S"],["Rooty driver's number saved","S"]]],
-  ["Cabin bag",[["Power bank","S"],["Medicines","A"],["Yuvaan's snacks + tablet","Y"]]],
-  ["Grand World evening",[["Light layer, mosquito repellent","A"],["Swim kit ready for tomorrow","A"]]]
+  ["Cabin bag",[["Power bank + X6 batteries","S"],["Medicines","A"],["Yuvaan's snacks + tablet","Y"]]],
+  ["Grand World evening",[["Light layer, mosquito repellent","A"],["Swim kit + dry bag ready for tomorrow","A"],["Charge X6 + spare","S"]]]
  ]},
 {id:"d13", chip:["Fri","13 Nov"], date:"Fri 13 Nov", city:"Phu Quoc", title:"Island hopping + Hon Thom + Sunset Town shows", stay:"Solera 2",
- keys:[["Pay","Rooty balance ₫40M in cash to the guide"]],
+ keys:[["Pay","Rooty balance ₫40M in cash to the guide"],["Camera","X6 on the stick + floating grip for boats & snorkelling; iPhone in the dry bag"]],
  groups:[
   ["Money & documents",[["Rooty balance share in an envelope","S"],["Passport copies only","S"],["Phone + PAY 1","S"]]],
   ["Wear",[["Swimwear under clothes","A"],["Rash guard for Yuvaan","Y"],["White Crocs – heel strap back on boats","S"],["Strap sandals","N"],["Strap sandals / Crocs","Y"],["Caps & sunglasses","A"]]],
-  ["Daypack + dry bag",[["Towel + full change of clothes × 3","A"],["Bag for wet clothes","A"],["Waterproof phone pouch (no neck strap)","A"],["Sunscreen","A"],["Goggles + arm bands","Y"],["Motion-sickness tablets","A"],["Water + snacks","A"],["Power bank","S"]]],
-  ["For the shows",[["Light jacket","A"],["Ear muffs for fireworks","Y"],["Mosquito repellent","A"]]]
+  ["Daypack + dry bag",[["Towel + full change of clothes × 3","A"],["Bag for wet clothes","A"],["Waterproof phone pouch (no neck strap)","A"],["X6 + floating grip + spare battery","S"],["Sunscreen","A"],["Goggles + arm bands","Y"],["Motion-sickness tablets","A"],["Water + snacks","A"],["Power bank","S"]]],
+  ["For the shows",[["Light jacket","A"],["Ear muffs for fireworks","Y"],["Mosquito repellent","A"],["iPhone for the shows (zoom + night)","S"]]]
  ]},
 {id:"d14", chip:["Sat","14 Nov"], date:"Sat 14 Nov", city:"Phu Quoc", title:"VinWonders full day", stay:"Solera 2",
- keys:[["Bus","Free VinBus from Grand World every 30 min, 08:30–16:00 (show Vin ticket)"]],
+ keys:[["Bus","Free VinBus from Grand World every 30 min, 08:30–16:00 (show Vin ticket)"],["Camera","X6 for rides + water park; iPhone stays dry"]],
  groups:[
   ["Sling",[["VinWonders QR tickets / app","S"],["Phone, PAY 1, dong","S"],["Passport copy","S"]]],
   ["Wear",[["Walking shoes (long day)","A"],["Crocs / strap sandals packed for the water park","A"]]],
-  ["Daypack",[["Swimwear + towel for the water park","A"],["Change of clothes for Yuvaan","Y"],["Waterproof pouch","A"],["Sunscreen, caps","A"],["Water bottles","A"],["Snacks","Y"],["Power bank","S"],["Rain poncho","A"]]]
+  ["Daypack",[["Swimwear + towel for the water park","A"],["Change of clothes for Yuvaan","Y"],["Waterproof pouch","A"],["X6 + floating grip + spare battery","S"],["Sunscreen, caps","A"],["Water bottles","A"],["Snacks","Y"],["Power bank","S"],["Rain poncho","A"]]]
  ]},
 {id:"d15", chip:["Sun","15 Nov"], date:"Sun 15 Nov", city:"Phu Quoc", title:"Vinpearl Safari + Grand World", stay:"Solera 2",
+ keys:[["Camera","X6 on the stick on the Safari bus"]],
  groups:[
   ["Sling",[["Safari QR tickets (same combo)","S"],["Small notes for giraffe feeding","S"],["Phone + PAY 1","S"]]],
   ["Wear",[["Walking shoes","A"]]],
-  ["Daypack",[["Caps, sunscreen, repellent","A"],["Water + snacks","A"],["Yuvaan's wipes + spare T-shirt","Y"]]],
+  ["Daypack",[["Caps, sunscreen, repellent","A"],["Water + snacks","A"],["Yuvaan's wipes + spare T-shirt","Y"],["X6 + stick","S"]]],
   ["Tonight",[["Pack – jackets on top (Hanoi is cooler)","A"],["Passports + Vietnam Airlines e-ticket in the sling","S"],["Alarm – leave at 07:30","S"]]]
  ]},
 {id:"d16", chip:["Mon","16 Nov"], date:"Mon 16 Nov", city:"Hanoi", title:"Fly to Hanoi, Old Quarter evening", stay:"Dream Boutique Hotel (decision pending)",
@@ -206,54 +241,119 @@ const DAYS = [
  groups:[
   ["Room check",[["Safe emptied","S"],["Chargers unplugged","A"],["Under beds & bathroom checked","N"]]],
   ["Sling",[["3 passports","A"],["Vietnam Airlines e-ticket","S"],["Phone, PAY 1, dong","S"]]],
-  ["Cabin bag",[["Light jackets for all 3","A"],["Power bank, medicines","A"],["Yuvaan's snacks + tablet","Y"]]],
-  ["Evening",[["Water puppet tickets","S"],["Light layer","A"]]]
+  ["Cabin bag",[["Light jackets for all 3","A"],["Power bank, X6 batteries, medicines","A"],["Yuvaan's snacks + tablet","Y"]]],
+  ["Evening",[["Water puppet tickets","S"],["Light layer","A"],["Sling in front in the Old Quarter","S"]]]
  ]},
 {id:"d17", chip:["Tue","17 Nov"], date:"Tue 17 Nov", city:"Ninh Binh", title:"Ninh Binh private day trip", stay:"Dream Boutique Hotel",
+ keys:[["Camera","X6 on the Trang An boat; iPhone for Hang Mua viewpoint"]],
  groups:[
-  ["Wear",[["Covered clothes (sleeves, trousers / long skirt)","A"],["Walking shoes with grip – Hang Mua steps","A"],["Caps & sunglasses","A"]]],
-  ["Daypack",[["Crocs / strap sandals for the Trang An boat","A"],["Water + snacks","A"],["Sunscreen, wipes, sanitiser","A"],["Light jacket","A"],["Small dong","S"],["Power bank","S"]]]
+  ["Wear",[["Covered clothes (sleeves, trousers / long skirt)","A"],["Gel-Excite 10 / walking shoes with grip – Hang Mua steps","A"],["Caps & sunglasses","A"]]],
+  ["Daypack",[["Crocs / strap sandals for the Trang An boat","A"],["Water + snacks","A"],["Sunscreen, wipes, sanitiser","A"],["Light jacket","A"],["Small dong","S"],["Power bank + X6","S"]]]
  ]},
 {id:"d18", chip:["Wed","18 Nov"], date:"Wed 18 Nov", city:"Hanoi", title:"Historic Hanoi", stay:"Dream Boutique Hotel",
  groups:[
   ["Wear",[["Covered clothes + closed shoes (mausoleum)","A"]]],
   ["Sling & daypack",[["Phone, PAY 1, dong","S"],["Passport copy","S"],["Water, umbrella, snacks","A"]]],
-  ["Tonight – cruise bag",[["Original passports","A"],["Swim + kayaking clothes; Crocs","A"],["Light jacket for the deck","A"],["Sleepwear + toiletries","A"],["Motion-sickness tablets","A"],["Chargers + power bank","S"]]]
+  ["Tonight – cruise bag",[["Original passports","A"],["Swim + kayaking clothes; Crocs","A"],["X6 + floating grip + spare battery","S"],["Light jacket for the deck","A"],["Sleepwear + toiletries","A"],["Motion-sickness tablets","A"],["Chargers + power bank","S"]]]
  ]},
 {id:"d19", chip:["Thu","19 Nov"], date:"Thu 19 Nov", city:"Lan Ha Bay", title:"Overnight cruise", stay:"Halora cruise",
+ keys:[["Camera","X6 for kayaking + group shot on deck; iPhone for sunset"]],
  groups:[
   ["Sling",[["3 original passports","A"],["PAY 1 + some cash for extras","S"]]],
-  ["Overnight bag",[["Swimwear, towel, change","A"],["Crocs / strap sandals for kayaking","A"],["Sunscreen, caps","A"],["Light jacket","A"],["Medicines","A"],["Yuvaan's comfort item + tablet","Y"]]]
+  ["Overnight bag",[["Swimwear, towel, change","A"],["Crocs / strap sandals for kayaking","A"],["Dry bag + waterproof pouch","A"],["Sunscreen, caps","A"],["Light jacket","A"],["Medicines","A"],["Yuvaan's comfort item + tablet","Y"]]]
  ]},
 {id:"d20", chip:["Fri","20 Nov"], date:"Fri 20 Nov", city:"Hanoi", title:"Back to Hanoi, shopping, farewell dinner", stay:"Hotel – book the 20 Nov night",
  groups:[
   ["Shopping",[["Foldable duffel","A"],["Spend leftover dong","S"]]],
-  ["Tonight",[["Web check-in TG 561 / TG 317","S"],["Weigh suitcases for Thai Airways","A"],["Passports + Thai e-tickets in the sling","S"],["LOUNGE-ABROAD + GUEST FEE cards in the sling","S"],["Snacks & activities for the Bangkok layover","Y"],["Confirm hotel → Noi Bai transfer","S"]]]
+  ["Tonight",[["Web check-in TG 561 / TG 317","S"],["Weigh suitcases for Thai Airways","A"],["Passports + Thai e-tickets in the sling","S"],["LOUNGE-ABROAD + GUEST FEE cards in the sling; LOUNGE-IN cards back from the safe","S"],["X6 + batteries in cabin bag","S"],["Snacks & activities for the Bangkok layover","Y"],["Confirm hotel → Noi Bai transfer","S"]]]
  ]},
 {id:"d21", chip:["Sat","21 Nov"], date:"Sat 21 Nov", city:"Hanoi → Bangkok → Mumbai", title:"Fly home", stay:"Home",
  keys:[["Hanoi","SH Premium Lounge, 4th floor near gate 28 – SBI Priority Pass visit 1"],["10:35","TG 561 → Bangkok, lands 12:25"],["Bangkok","6½ h – SBI Priority Pass visit 2; Neha & Yuvaan as guests on SBI PRIME PRO (US$27 each). Plaza Premium, Concourse G, 24 h"],["18:55","TG 317 → Mumbai, lands 22:00"]],
  groups:[
   ["Room check",[["Safe emptied","S"],["Chargers unplugged","A"],["Under beds & bathroom checked","N"]]],
-  ["Sling",[["3 passports","A"],["Thai e-tickets","S"],["SBI + IndusInd Priority Pass, SBI PRIME PRO, IndusInd Pinnacle","S"],["PAY 1 + INR; LOUNGE-IN cards back in wallet","S"]]],
-  ["Cabin bag",[["Power bank","S"],["Light jackets","A"],["Medicines","A"],["Yuvaan's tablet, snacks, change of clothes","Y"]]],
-  ["Mumbai",[["Pune transfer driver's number","S"]]]
+  ["Sling",[["3 passports","A"],["Thai e-tickets","S"],["SBI + IndusInd Priority Pass, SBI PRIME PRO, IndusInd Pinnacle","S"],["PAY 1 + INR","S"]]],
+  ["Cabin bag",[["Power bank + X6","S"],["Light jackets","A"],["Medicines","A"],["Yuvaan's tablet, snacks, change of clothes","Y"]]],
+  ["Mumbai",[["Pune transfer driver's number","S"]]],
+  ["Back home",[["Return the X6 (pickup 22 Nov)","S"],["Settle Splitwise with the group","S"]]]
  ]}
 ];
 
 const WHO = {A:"All", S:"Satyam", N:"Neha", Y:"Yuvaan"};
-const KEY = "vn-daywise-v1";
+const KEY = "vn-trip-v2";
 let st = {};
 try { st = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { st = {}; }
 const save = () => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} };
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let hideDone = false;
+try { hideDone = localStorage.getItem(KEY + "-hide") === "1"; } catch (e) {}
 
-const strip = document.getElementById("strip"), main = document.getElementById("main");
+const strip = document.getElementById("strip");
+const packEl = document.getElementById("pack"), daysEl = document.getElementById("days");
 
 function counts(d){
   let a = 0, n = 0;
   d.groups.forEach((g, gi) => g[1].forEach((_, ii) => { a++; if (st[d.id + "|" + gi + "|" + ii]) n++; }));
   return [n, a];
 }
+
+function render(el, d, isDay){
+  let h = `<div class="topbar"><button class="hideBtn ${hideDone ? "on" : ""}">Hide done</button><button class="resetAll">Reset all</button></div>`;
+  if (isDay) h += `<div class="dayhead"><div class="city">${esc(d.city)}</div><h2>${esc(d.date)} · ${esc(d.title)}</h2>${d.stay ? `<div class="stay">Stay: ${esc(d.stay)}</div>` : ""}</div>`;
+  else h += `<div class="dayhead"><div class="city">Pack by 8 Nov</div><h2>Packing list</h2></div>`;
+  h += `<div class="prog"><div class="bar"><i class="pb"></i></div><span class="pc"></span></div>`;
+  if (d.keys) h += `<div class="keys">${d.keys.map(k => `<div><b>${esc(k[0])}</b> – ${esc(k[1])}</div>`).join("")}</div>`;
+  if (d.id === "pre") h += `<div class="alert"><b>Overdue:</b> cruise balance (30 Oct), cancel extra HCMC booking and Ninh Binh balance (3 Nov).</div>`;
+  d.groups.forEach((g, gi) => {
+    const keys = g[1].map((_, ii) => d.id + "|" + gi + "|" + ii);
+    const nd = keys.filter(k => st[k]).length;
+    h += `<section class="${nd === keys.length ? "alldone" : ""}"><h3>${esc(g[0])}<small>${nd}/${keys.length}</small></h3><ul>`;
+    g[1].forEach((it, ii) => {
+      const k = keys[ii], on = !!st[k];
+      h += `<li class="${on ? "done" : ""}"><label><input type="checkbox" data-k="${k}" ${on ? "checked" : ""}><span class="txt">${esc(it[0])}</span><span class="who w${it[1]}">${WHO[it[1]]}</span></label></li>`;
+    });
+    h += `</ul></section>`;
+  });
+  h += `<div class="alldone-msg">Everything here is done ✓</div><div class="legend">Who: <span class="who wA">All</span><span class="who wS">Satyam</span><span class="who wN">Neha</span><span class="who wY">Yuvaan</span></div>
+  <div class="tools"><button class="clr">Untick this ${isDay ? "day" : "list"}</button></div>`;
+  el.innerHTML = h;
+  el.querySelectorAll("input").forEach(cb => cb.onchange = () => {
+    if (cb.checked) st[cb.dataset.k] = 1; else delete st[cb.dataset.k];
+    cb.closest("li").classList.toggle("done", cb.checked);
+    const sec = cb.closest("section"), ins = [...sec.querySelectorAll("input")];
+    const nd = ins.filter(x => x.checked).length;
+    sec.classList.toggle("alldone", nd === ins.length);
+    sec.querySelector("small").textContent = nd + "/" + ins.length;
+    save(); prog(el, d); if (isDay) drawStrip(d.id);
+  });
+  el.querySelector(".hideBtn").onclick = () => {
+    hideDone = !hideDone;
+    try { localStorage.setItem(KEY + "-hide", hideDone ? "1" : "0"); } catch (e) {}
+    applyHide();
+  };
+  el.querySelector(".resetAll").onclick = () => {
+    if (!confirm("Untick everything – packing list and every day?")) return;
+    st = {}; save(); renderAll();
+  };
+  el.querySelector(".clr").onclick = () => {
+    if (!confirm("Untick all items here?")) return;
+    Object.keys(st).forEach(k => { if (k.startsWith(d.id + "|")) delete st[k]; });
+    save(); render(el, d, isDay); if (isDay) drawStrip(d.id);
+  };
+  prog(el, d); applyHide();
+}
+function prog(el, d){
+  const [n, a] = counts(d);
+  el.querySelector(".pb").style.width = (a ? 100 * n / a : 0) + "%";
+  el.querySelector(".pc").textContent = n + "/" + a;
+  el.querySelector(".alldone-msg").classList.toggle("show", a > 0 && n === a);
+}
+function applyHide(){
+  [packEl, daysEl].forEach(e => {
+    e.classList.toggle("hide-done", hideDone);
+    const b = e.querySelector(".hideBtn"); if (b) b.classList.toggle("on", hideDone);
+  });
+}
+let curDay = "pre";
 function drawStrip(cur){
   strip.innerHTML = "";
   DAYS.forEach(d => {
@@ -261,84 +361,38 @@ function drawStrip(cur){
     const b = document.createElement("button");
     b.className = "chip" + (d.id === cur ? " on" : "") + (n === a && a ? " full" : "");
     b.innerHTML = `<small>${esc(d.chip[0])}</small><b>${esc(d.chip[1])}</b>`;
-    b.onclick = () => show(d.id);
+    b.onclick = () => showDay(d.id, true);
     strip.appendChild(b);
   });
   const on = strip.querySelector(".on");
-  if (on) on.scrollIntoView({inline:"center", block:"nearest"});
+  if (on && !strip.hidden) on.scrollIntoView({inline:"center", block:"nearest"});
 }
-function show(id){
+function showDay(id, scroll){
   const d = DAYS.find(x => x.id === id) || DAYS[0];
+  curDay = d.id;
   try { localStorage.setItem(KEY + "-day", d.id); } catch (e) {}
-  let h = `<div class="topbar"><button id="hideBtn" class="${hideDone ? "on" : ""}">Hide done</button><button id="resetAll">Reset all</button></div><div class="dayhead"><div class="city">${esc(d.city)}</div><h2>${esc(d.date)} · ${esc(d.title)}</h2>${d.stay ? `<div class="stay">Stay: ${esc(d.stay)}</div>` : ""}</div>
-  <div class="prog"><div class="bar"><i id="pb"></i></div><span id="pc"></span></div>`;
-  if (d.keys) h += `<div class="keys">${d.keys.map(k => `<div><b>${esc(k[0])}</b> – ${esc(k[1])}</div>`).join("")}</div>`;
-  if (d.id === "pre") h += `<div class="alert"><b>Overdue:</b> cruise balance (30 Oct), cancel extra HCMC booking and Ninh Binh balance (3 Nov).</div>`;
-  d.groups.forEach((g, gi) => {
-    const allDone = g[1].every((_, ii) => st[d.id + "|" + gi + "|" + ii]);
-    h += `<section class="${allDone ? "alldone" : ""}"><h3>${esc(g[0])}</h3><ul>`;
-    g[1].forEach((it, ii) => {
-      const k = d.id + "|" + gi + "|" + ii, on = !!st[k];
-      h += `<li class="${on ? "done" : ""}"><label><input type="checkbox" data-k="${k}" ${on ? "checked" : ""}><span class="txt">${esc(it[0])}</span><span class="who w${it[1]}">${WHO[it[1]]}</span></label></li>`;
-    });
-    h += `</ul></section>`;
-  });
-  h += `<div class="alldone-msg" id="adm">Everything for this day is done ✓</div><div class="legend">Who: <span class="who wA">All</span><span class="who wS">Satyam</span><span class="who wN">Neha</span><span class="who wY">Yuvaan</span></div>
-  <div class="tools"><button id="clr">Untick this day</button></div>`;
-  main.innerHTML = h;
-  main.querySelectorAll("input").forEach(cb => cb.onchange = () => {
-    if (cb.checked) st[cb.dataset.k] = 1; else delete st[cb.dataset.k];
-    cb.closest("li").classList.toggle("done", cb.checked);
-    const sec = cb.closest("section");
-    sec.classList.toggle("alldone", [...sec.querySelectorAll("input")].every(x => x.checked));
-    save(); prog(d); drawStrip(d.id);
-  });
-  document.getElementById("hideBtn").onclick = () => {
-    hideDone = !hideDone;
-    try { localStorage.setItem(KEY + "-hide", hideDone ? "1" : "0"); } catch (e) {}
-    applyHide();
-  };
-  document.getElementById("resetAll").onclick = () => {
-    if (!confirm("Untick everything on every day?")) return;
-    st = {}; save(); show(d.id);
-  };
-  applyHide();
-  document.getElementById("clr").onclick = () => {
-    if (!confirm("Untick all items for this day?")) return;
-    Object.keys(st).forEach(k => { if (k.startsWith(d.id + "|")) delete st[k]; });
-    save(); show(d.id);
-  };
-  prog(d); drawStrip(d.id); window.scrollTo(0, 0);
+  render(daysEl, d, true); drawStrip(d.id);
+  if (scroll) window.scrollTo(0, 0);
 }
-let hideDone = false;
-try { hideDone = localStorage.getItem(KEY + "-hide") === "1"; } catch (e) {}
-function applyHide(){
-  main.classList.toggle("hide-done", hideDone);
-  const b = document.getElementById("hideBtn");
-  if (b) b.classList.toggle("on", hideDone);
-}
-document.getElementById("tabDays").onclick = () => setTab(true);
-document.getElementById("tabCards").onclick = () => setTab(false);
-function setTab(days){
-  document.getElementById("tabDays").classList.toggle("on", days);
-  document.getElementById("tabCards").classList.toggle("on", !days);
-  main.hidden = !days; strip.hidden = !days;
-  document.getElementById("cards").hidden = days;
+function renderAll(){ render(packEl, PACK, false); showDay(curDay, false); }
+
+function setTab(t){
+  document.querySelectorAll(".tabs button").forEach(b => b.classList.toggle("on", b.dataset.tab === t));
+  packEl.hidden = t !== "pack"; daysEl.hidden = t !== "days"; strip.hidden = t !== "days";
+  document.getElementById("cards").hidden = t !== "cards";
+  try { localStorage.setItem(KEY + "-tab", t); } catch (e) {}
+  if (t === "days") drawStrip(curDay);
   window.scrollTo(0, 0);
 }
-function prog(d){
-  const [n, a] = counts(d);
-  const m = document.getElementById("adm"); if (m) m.classList.toggle("show", a > 0 && n === a);
-  document.getElementById("pb").style.width = (a ? 100 * n / a : 0) + "%";
-  document.getElementById("pc").textContent = n + "/" + a;
-}
+document.querySelectorAll(".tabs button").forEach(b => b.onclick = () => setTab(b.dataset.tab));
 
-/* open today's day during the trip, else the last day viewed, else "Before the trip" */
-let start = "pre";
-try { start = localStorage.getItem(KEY + "-day") || "pre"; } catch (e) {}
+/* start: today's day during the trip, else last view */
+let startTab = "days";
+try { curDay = localStorage.getItem(KEY + "-day") || "pre"; startTab = localStorage.getItem(KEY + "-tab") || "days"; } catch (e) {}
 const t = new Date();
-if (t.getFullYear() === 2026 && t.getMonth() === 10 && t.getDate() >= 8 && t.getDate() <= 21) start = "d" + String(t.getDate()).padStart(2, "0");
-show(start);
+if (t.getFullYear() === 2026 && t.getMonth() === 10 && t.getDate() >= 8 && t.getDate() <= 21) { curDay = "d" + String(t.getDate()).padStart(2, "0"); startTab = "days"; }
+renderAll();
+setTab(startTab);
 </script>
 </body>
 </html>
